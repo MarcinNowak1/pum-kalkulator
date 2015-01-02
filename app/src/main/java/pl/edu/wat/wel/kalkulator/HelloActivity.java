@@ -2,10 +2,16 @@ package pl.edu.wat.wel.kalkulator;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class HelloActivity extends ActionBarActivity {
+
+    private static final String TAG = "HelloActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +40,21 @@ public class HelloActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void dodaj(View view) {
+        String a = ((EditText) findViewById(R.id.editTextA)).getText().toString();
+        String b = ((EditText) findViewById(R.id.editTextB)).getText().toString();
+        int c = Integer.valueOf(a) + Integer.valueOf(b);
+        Log.d(TAG, "a = " + a + ", b = " + b + ", c = " + c);
+        ((TextView) findViewById(R.id.wynik)).setText(String.valueOf(c));
+    }
+
+    public void odejmij(View view) {
+        String a = ((EditText) findViewById(R.id.editTextA)).getText().toString();
+        String b = ((EditText) findViewById(R.id.editTextB)).getText().toString();
+        int c = Integer.valueOf(a) - Integer.valueOf(b);
+        Log.d(TAG, "a = " + a + ", b = " + b + ", c = " + c);
+        ((TextView) findViewById(R.id.wynik)).setText(String.valueOf(c));
     }
 }

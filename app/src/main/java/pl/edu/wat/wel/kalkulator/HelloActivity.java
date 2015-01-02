@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-// jakaś zmiana
-
 public class HelloActivity extends ActionBarActivity {
 
     @Override
